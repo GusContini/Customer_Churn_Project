@@ -168,6 +168,7 @@ def classification_report_image(y_train,
     '''
 
     # Plot clf_1 classification report
+    plt.clf()
     plt.rc('figure', figsize=(8, 5))
     # test set
     plt.text(0.01, 1.25, str('Classifier 1 Test'), {
@@ -184,6 +185,7 @@ def classification_report_image(y_train,
     plt.savefig('./images/results/clf_1_classification_report')
 
     # Plot clf_2 classification report
+    plt.clf()
     plt.rc('figure', figsize=(8, 5))
     # test set
     plt.text(0.01, 1.25, str('Classifier 1 Test'), {
