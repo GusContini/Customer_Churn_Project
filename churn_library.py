@@ -1,5 +1,7 @@
 '''
-Library doc string
+Churn Library doc string: this script creates a class with methods to perform
+EDA, feature engineering, train a model to predict churn and save differnt outputs
+
 Author: GusContini
 Date: Feb 2024
 '''
