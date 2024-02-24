@@ -1,5 +1,5 @@
 '''
-Library doc string
+This script aims to log and test the class defined in the churn_library.py file
 
 Author: GusContini
 Date: Feb 2024

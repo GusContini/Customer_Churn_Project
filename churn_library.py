@@ -104,7 +104,7 @@ class ChurnPredictionModel:
     def encoder_helper(self, category_lst=None):
         '''
         helper function to turn each categorical column into a new column with
-        propotion of churn for each category - associated with cell 15 from the notebook
+        propotion of churn for each category
 
         input:
                 df: pandas dataframe
@@ -202,7 +202,7 @@ class ChurnPredictionModel:
         plt.savefig('./images/results/clf_2_classification_report')
         plt.clf()
 
-    def feature_importance_plot(self, model, output_pth):
+    def feature_importance_plot(self, model, output_pth_1, output_pth_2):
         '''
         creates and stores the feature importances in pth
         input:
@@ -221,7 +221,7 @@ class ChurnPredictionModel:
             self.X_test,
             plot_type="bar",
             show=False)
-        plt.savefig(output_pth)
+        plt.savefig(output_pth_1)
 
         # clf 1 feature importance plot
         importances = model.feature_importances_
@@ -236,7 +236,7 @@ class ChurnPredictionModel:
         plt.ylabel('Importance')
         plt.bar(range(self.X_test.shape[1]), importances[indices])
         plt.xticks(range(self.X_test.shape[1]), names, rotation=90)
-        plt.savefig(output_pth)
+        plt.savefig(output_pth_2)
 
     def train_models(
         self, param_grid=None, clf_1=RandomForestClassifier(
@@ -347,7 +347,8 @@ class ChurnPredictionModel:
         self.model_1 = joblib.load('./models/model_1.pkl')
         self.feature_importance_plot(
             model=self.model_1,
-            output_pth='./images/results/clf_1_feature_importance')
+            output_pth_1='./images/results/clf_1_shap',
+            output_pth_2='./images/results/clf_1_feature_importance')
 
 
 if __name__ == '__main__':
