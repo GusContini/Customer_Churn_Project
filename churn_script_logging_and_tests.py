@@ -1,6 +1,6 @@
 import os
 import logging
-import churn_library_solution as cls
+import churn_library as cls
 
 logging.basicConfig(
     filename='./logs/churn_library.log',
